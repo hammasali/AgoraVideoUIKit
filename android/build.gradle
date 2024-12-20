@@ -1,4 +1,4 @@
-group 'io.agora.agora_flutter_uikit'
+group 'io.agora.agora_uikit'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -17,7 +17,7 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -38,7 +38,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace 'io.agora.agorauikit_flutter'
+    namespace 'io.agora.agora_uikit'
     compileSdkVersion 33
 
     compileOptions {
