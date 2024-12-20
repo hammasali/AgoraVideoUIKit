@@ -1,4 +1,4 @@
-group 'io.agora.agora_uikit'
+group 'io.agora.agora_flutter_uikit'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -17,42 +17,23 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        mavenCentral()
+        jcenter()
     }
-}
-
-def localProperties = new Properties()
-def localPropertiesFile = rootProject.file('local.properties')
-if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader('UTF-8') { reader ->
-        localProperties.load(reader)
-    }
-}
-
-def flutterRoot = localProperties.getProperty('flutter.sdk')
-if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace 'io.agora.agora_uikit'
+    namespace 'io.agora.agorauikit_flutter'
     compileSdkVersion 33
+    namespace "io.agora.agora_uikit"
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdkVersion 16
     }
 }
 
