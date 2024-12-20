@@ -25,7 +25,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace 'io.agora.agorauikit_flutter'
     compileSdkVersion 33
+    namespace "io.agora.agora_uikit"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
